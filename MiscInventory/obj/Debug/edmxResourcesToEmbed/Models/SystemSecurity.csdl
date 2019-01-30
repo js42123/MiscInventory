@@ -1,0 +1,20 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="SystemSecurityModel" Alias="Self" p1:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:p1="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+  <EntityContainer Name="SYSTEM_SECURITYEntities" p1:LazyLoadingEnabled="true">
+    <EntitySet Name="T000_SYSTEM_SEC" EntityType="SystemSecurityModel.T000_SYSTEM_SEC" />
+  </EntityContainer>
+  <EntityType Name="T000_SYSTEM_SEC">
+    <Key>
+      <PropertyRef Name="T000_SYSTEM_SEC_PRIMARY_KEY" />
+    </Key>
+    <Property Name="SYSTEM_ID" Type="String" Nullable="false" MaxLength="4" Unicode="false" FixedLength="true" />
+    <Property Name="USERID_R" Type="String" Nullable="false" MaxLength="15" Unicode="false" FixedLength="true" />
+    <Property Name="BUDGET" Type="String" Nullable="false" MaxLength="3" Unicode="false" FixedLength="true" />
+    <Property Name="FUNCTIONAL_AREA" Type="String" Nullable="false" MaxLength="5" Unicode="false" FixedLength="true" />
+    <Property Name="PRIORITY" Type="String" Nullable="false" MaxLength="2" Unicode="false" FixedLength="true" />
+    <Property Name="DEFAULT_PANEL" Type="String" Nullable="false" MaxLength="4" Unicode="false" FixedLength="true" />
+    <Property Name="UPD_DATE" Type="DateTime" Precision="0" />
+    <Property Name="UPDATED_BY" Type="String" Nullable="false" MaxLength="15" Unicode="false" FixedLength="true" />
+    <Property Name="T000_SYSTEM_SEC_PRIMARY_KEY" Type="String" Nullable="false" MaxLength="27" Unicode="false" FixedLength="false" p1:StoreGeneratedPattern="Computed" />
+  </EntityType>
+</Schema>

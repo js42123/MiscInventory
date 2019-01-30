@@ -1,0 +1,20 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="SystemSecurityModel.Store" Alias="Self" Provider="System.Data.SqlClient" ProviderManifestToken="2008" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <EntityContainer Name="SystemSecurityModelStoreContainer">
+    <EntitySet Name="T000_SYSTEM_SEC" EntityType="SystemSecurityModel.Store.T000_SYSTEM_SEC" store:Type="Tables" Schema="dbo" />
+  </EntityContainer>
+  <EntityType Name="T000_SYSTEM_SEC">
+    <Key>
+      <PropertyRef Name="T000_SYSTEM_SEC_PRIMARY_KEY" />
+    </Key>
+    <Property Name="SYSTEM_ID" Type="char" Nullable="false" MaxLength="4" />
+    <Property Name="USERID_R" Type="char" Nullable="false" MaxLength="15" />
+    <Property Name="BUDGET" Type="char" Nullable="false" MaxLength="3" />
+    <Property Name="FUNCTIONAL_AREA" Type="char" Nullable="false" MaxLength="5" />
+    <Property Name="PRIORITY" Type="char" Nullable="false" MaxLength="2" />
+    <Property Name="DEFAULT_PANEL" Type="char" Nullable="false" MaxLength="4" />
+    <Property Name="UPD_DATE" Type="date" />
+    <Property Name="UPDATED_BY" Type="char" Nullable="false" MaxLength="15" />
+    <Property Name="T000_SYSTEM_SEC_PRIMARY_KEY" Type="varchar" Nullable="false" MaxLength="27" StoreGeneratedPattern="Computed" />
+  </EntityType>
+</Schema>

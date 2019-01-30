@@ -1,0 +1,100 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="MISC_INVENTORYModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <EntityType Name="T115_MISC_INVENTORY">
+    <Key>
+      <PropertyRef Name="T115_MISC_INVENTORY_PRIMARY_KEY" />
+    </Key>
+    <Property Name="INV_TYPE" Type="char" MaxLength="1" Nullable="false" />
+    <Property Name="DELETE_FLAG" Type="char" MaxLength="1" Nullable="false" />
+    <Property Name="ID_R" Type="char" MaxLength="16" Nullable="false" />
+    <Property Name="INV_DESC" Type="char" MaxLength="24" Nullable="false" />
+    <Property Name="BUD" Type="char" MaxLength="3" Nullable="false" />
+    <Property Name="SERIAL_NO" Type="char" MaxLength="16" Nullable="false" />
+    <Property Name="REPLC_SERIAL_NO" Type="char" MaxLength="16" Nullable="false" />
+    <Property Name="LOC" Type="char" MaxLength="5" Nullable="false" />
+    <Property Name="SUB_LOC" Type="char" MaxLength="3" Nullable="false" />
+    <Property Name="PURCH_YY" Type="char" MaxLength="4" Nullable="false" />
+    <Property Name="PURCH_MM" Type="char" MaxLength="2" Nullable="false" />
+    <Property Name="DOC_DATE" Type="date" />
+    <Property Name="COST" Type="decimal" Precision="11" Scale="2" Nullable="false" />
+    <Property Name="DEPR" Type="decimal" Precision="11" Scale="2" Nullable="false" />
+    <Property Name="FEDID" Type="char" MaxLength="1" Nullable="false" />
+    <Property Name="SUB_TYPE" Type="char" MaxLength="1" Nullable="false" />
+    <Property Name="REQ_NO" Type="char" MaxLength="6" Nullable="false" />
+    <Property Name="VCHR_NO" Type="char" MaxLength="5" Nullable="false" />
+    <Property Name="MANUFAC_MODL_NO" Type="char" MaxLength="15" Nullable="false" />
+    <Property Name="MANUFAC_NAME" Type="char" MaxLength="58" Nullable="false" />
+    <Property Name="COMMENT" Type="char" MaxLength="63" Nullable="false" />
+    <Property Name="UT_VCHR_NO" Type="char" MaxLength="5" Nullable="false" />
+    <Property Name="T115_MISC_INVENTORY_PRIMARY_KEY" Type="varchar" MaxLength="17" StoreGeneratedPattern="Computed" Nullable="false" />
+    <Property Name="VALUE_STATUS" Type="char" MaxLength="1" Nullable="false" />
+  </EntityType>
+  <EntityType Name="T115_MISC_TRAN_ARCHV">
+    <Key>
+      <PropertyRef Name="T115_MISC_TRAN_ARCHV_PRIMARY_KEY" />
+    </Key>
+    <Property Name="TRANS" Type="char" MaxLength="1" Nullable="false" />
+    <Property Name="INV_TYPE" Type="char" MaxLength="1" Nullable="false" />
+    <Property Name="INV_DATE" Type="date" />
+    <Property Name="INV_TIME" Type="time" Precision="0" />
+    <Property Name="TRANS_USERID" Type="char" MaxLength="7" Nullable="false" />
+    <Property Name="ID_R" Type="char" MaxLength="16" Nullable="false" />
+    <Property Name="INV_DESC" Type="char" MaxLength="24" Nullable="false" />
+    <Property Name="BUD" Type="char" MaxLength="3" Nullable="false" />
+    <Property Name="SERIAL_NO" Type="char" MaxLength="16" Nullable="false" />
+    <Property Name="REPLC_SERIAL_NO" Type="char" MaxLength="16" Nullable="false" />
+    <Property Name="LOC" Type="char" MaxLength="5" Nullable="false" />
+    <Property Name="SUB_LOC" Type="char" MaxLength="3" Nullable="false" />
+    <Property Name="PURCH_YY" Type="char" MaxLength="4" Nullable="false" />
+    <Property Name="PURCH_MM" Type="char" MaxLength="2" Nullable="false" />
+    <Property Name="DOC_DATE" Type="date" />
+    <Property Name="COST" Type="decimal" Precision="11" Scale="2" Nullable="false" />
+    <Property Name="DEPR" Type="decimal" Precision="11" Scale="2" Nullable="false" />
+    <Property Name="FEDID" Type="char" MaxLength="1" Nullable="false" />
+    <Property Name="SUB_TYPE" Type="char" MaxLength="1" Nullable="false" />
+    <Property Name="REQ_NO" Type="char" MaxLength="6" Nullable="false" />
+    <Property Name="VCHR_NO" Type="char" MaxLength="5" Nullable="false" />
+    <Property Name="MANUFAC_MODL_NO" Type="char" MaxLength="15" Nullable="false" />
+    <Property Name="MANUFAC_NAME" Type="char" MaxLength="58" Nullable="false" />
+    <Property Name="COMMENT" Type="char" MaxLength="68" Nullable="false" />
+    <Property Name="T115_MISC_TRAN_ARCHV_PRIMARY_KEY" Type="varchar" MaxLength="34" StoreGeneratedPattern="Computed" Nullable="false" />
+    <Property Name="VALUE_STATUS" Type="char" MaxLength="1" Nullable="false" />
+  </EntityType>
+  <EntityType Name="T115_MISC_TRANS">
+    <Key>
+      <PropertyRef Name="T115_MISC_TRANS_PRIMARY_KEY" />
+    </Key>
+    <Property Name="TRANS" Type="char" MaxLength="1" Nullable="false" />
+    <Property Name="INV_TYPE" Type="char" MaxLength="1" Nullable="false" />
+    <Property Name="INV_DATE" Type="date" />
+    <Property Name="INV_TIME" Type="time" Precision="0" />
+    <Property Name="TRANS_USERID" Type="char" MaxLength="7" Nullable="false" />
+    <Property Name="ID_R" Type="char" MaxLength="16" Nullable="false" />
+    <Property Name="INV_DESC" Type="char" MaxLength="24" Nullable="false" />
+    <Property Name="BUD" Type="char" MaxLength="3" Nullable="false" />
+    <Property Name="SERIAL_NO" Type="char" MaxLength="16" Nullable="false" />
+    <Property Name="REPLC_SERIAL_NO" Type="char" MaxLength="16" Nullable="false" />
+    <Property Name="LOC" Type="char" MaxLength="5" Nullable="false" />
+    <Property Name="SUB_LOC" Type="char" MaxLength="3" Nullable="false" />
+    <Property Name="PURCH_YY" Type="char" MaxLength="4" Nullable="false" />
+    <Property Name="PURCH_MM" Type="char" MaxLength="2" Nullable="false" />
+    <Property Name="DOC_DATE" Type="date" />
+    <Property Name="COST" Type="decimal" Precision="11" Scale="2" Nullable="false" />
+    <Property Name="DEPR" Type="decimal" Precision="11" Scale="2" Nullable="false" />
+    <Property Name="FEDID" Type="char" MaxLength="1" Nullable="false" />
+    <Property Name="SUB_TYPE" Type="char" MaxLength="1" Nullable="false" />
+    <Property Name="REQ_NO" Type="char" MaxLength="6" Nullable="false" />
+    <Property Name="VCHR_NO" Type="char" MaxLength="5" Nullable="false" />
+    <Property Name="MANUFAC_MODL_NO" Type="char" MaxLength="15" Nullable="false" />
+    <Property Name="MANUFAC_NAME" Type="char" MaxLength="58" Nullable="false" />
+    <Property Name="COMMENT" Type="char" MaxLength="63" Nullable="false" />
+    <Property Name="UT_VCHR_NO" Type="char" MaxLength="5" Nullable="false" />
+    <Property Name="T115_MISC_TRANS_PRIMARY_KEY" Type="varchar" MaxLength="34" StoreGeneratedPattern="Computed" Nullable="false" />
+    <Property Name="VALUE_STATUS" Type="char" MaxLength="1" Nullable="false" />
+  </EntityType>
+  <EntityContainer Name="MISC_INVENTORYModelStoreContainer">
+    <EntitySet Name="T115_MISC_INVENTORY" EntityType="Self.T115_MISC_INVENTORY" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="T115_MISC_TRAN_ARCHV" EntityType="Self.T115_MISC_TRAN_ARCHV" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="T115_MISC_TRANS" EntityType="Self.T115_MISC_TRANS" Schema="dbo" store:Type="Tables" />
+  </EntityContainer>
+</Schema>

@@ -1,0 +1,90 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+    <Schema Namespace="SystemSecurityModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <EntityType Name="T000_SYSTEM_SEC">
+          <Key>
+            <PropertyRef Name="T000_SYSTEM_SEC_PRIMARY_KEY" />
+          </Key>
+          <Property Name="SYSTEM_ID" Type="char" MaxLength="4" Nullable="false" />
+          <Property Name="USERID_R" Type="char" MaxLength="15" Nullable="false" />
+          <Property Name="BUDGET" Type="char" MaxLength="3" Nullable="false" />
+          <Property Name="FUNCTIONAL_AREA" Type="char" MaxLength="5" Nullable="false" />
+          <Property Name="PRIORITY" Type="char" MaxLength="2" Nullable="false" />
+          <Property Name="DEFAULT_PANEL" Type="char" MaxLength="4" Nullable="false" />
+          <Property Name="UPD_DATE" Type="date" />
+          <Property Name="UPDATED_BY" Type="char" MaxLength="15" Nullable="false" />
+          <Property Name="T000_SYSTEM_SEC_PRIMARY_KEY" Type="varchar" MaxLength="27" StoreGeneratedPattern="Computed" Nullable="false" />
+        </EntityType>
+        <EntityContainer Name="SystemSecurityModelStoreContainer">
+          <EntitySet Name="T000_SYSTEM_SEC" EntityType="Self.T000_SYSTEM_SEC" Schema="dbo" store:Type="Tables" />
+        </EntityContainer>
+      </Schema></edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="SystemSecurityModel" Alias="Self" p1:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:p1="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityContainer Name="SYSTEM_SECURITYEntities" p1:LazyLoadingEnabled="true">
+          <EntitySet Name="T000_SYSTEM_SEC" EntityType="SystemSecurityModel.T000_SYSTEM_SEC" />
+        </EntityContainer>
+        <EntityType Name="T000_SYSTEM_SEC">
+          <Key>
+            <PropertyRef Name="T000_SYSTEM_SEC_PRIMARY_KEY" />
+          </Key>
+          <Property Name="SYSTEM_ID" Type="String" Nullable="false" MaxLength="4" Unicode="false" FixedLength="true" />
+          <Property Name="USERID_R" Type="String" Nullable="false" MaxLength="15" Unicode="false" FixedLength="true" />
+          <Property Name="BUDGET" Type="String" Nullable="false" MaxLength="3" Unicode="false" FixedLength="true" />
+          <Property Name="FUNCTIONAL_AREA" Type="String" Nullable="false" MaxLength="5" Unicode="false" FixedLength="true" />
+          <Property Name="PRIORITY" Type="String" Nullable="false" MaxLength="2" Unicode="false" FixedLength="true" />
+          <Property Name="DEFAULT_PANEL" Type="String" Nullable="false" MaxLength="4" Unicode="false" FixedLength="true" />
+          <Property Name="UPD_DATE" Type="DateTime" Precision="0" />
+          <Property Name="UPDATED_BY" Type="String" Nullable="false" MaxLength="15" Unicode="false" FixedLength="true" />
+          <Property Name="T000_SYSTEM_SEC_PRIMARY_KEY" Type="String" Nullable="false" MaxLength="27" Unicode="false" FixedLength="false" p1:StoreGeneratedPattern="Computed" />
+        </EntityType>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="SystemSecurityModelStoreContainer" CdmEntityContainer="SYSTEM_SECURITYEntities">
+          <EntitySetMapping Name="T000_SYSTEM_SEC">
+            <EntityTypeMapping TypeName="SystemSecurityModel.T000_SYSTEM_SEC">
+              <MappingFragment StoreEntitySet="T000_SYSTEM_SEC">
+                <ScalarProperty Name="SYSTEM_ID" ColumnName="SYSTEM_ID" />
+                <ScalarProperty Name="USERID_R" ColumnName="USERID_R" />
+                <ScalarProperty Name="BUDGET" ColumnName="BUDGET" />
+                <ScalarProperty Name="FUNCTIONAL_AREA" ColumnName="FUNCTIONAL_AREA" />
+                <ScalarProperty Name="PRIORITY" ColumnName="PRIORITY" />
+                <ScalarProperty Name="DEFAULT_PANEL" ColumnName="DEFAULT_PANEL" />
+                <ScalarProperty Name="UPD_DATE" ColumnName="UPD_DATE" />
+                <ScalarProperty Name="UPDATED_BY" ColumnName="UPDATED_BY" />
+                <ScalarProperty Name="T000_SYSTEM_SEC_PRIMARY_KEY" ColumnName="T000_SYSTEM_SEC_PRIMARY_KEY" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="True" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="True" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="None" />
+        <DesignerProperty Name="UseLegacyProvider" Value="False" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>

@@ -1,0 +1,129 @@
+﻿@model IEnumerable<MiscInventory.Models.T115_MISC_INVENTORY>
+
+<script src="~/Scripts/jquery-3.3.1.js"></script>
+<script src="~/Scripts/jquery-ui-1.12.1.js"></script>
+
+
+<div class="container">
+        <div class="row">
+            <div class="col-12 text-center">
+                <div class="card contact shadow-sm mb-3 p-1 bg-white rounded">
+                    <div class="card-header card-title">
+                        <h4 class="title m-0">Current Search Results</h4>
+                    </div>
+
+                    <div class="card-body">
+
+                        <div style="overflow: scroll;" id="DivMainContent">
+
+                            <table id="tblSearch" style="font-size: 0.9em;" border="1">
+
+                                <tr class="header">
+                                    <th style="font-size: 1.25em" col width="auto">
+                                        @Html.DisplayNameFor(model => model.INV_TYPE)
+                                    </th>
+                                    <th style="font-size: 1.25em" col width="auto">
+                                        @Html.DisplayNameFor(model => model.ID_R)
+                                    </th>
+                                    <th style="font-size:1.25em" col width="auto">
+                                        @Html.DisplayNameFor(model => model.INV_DESC)
+                                    </th>
+                                    <th style="font-size: 1.25em" col width="auto">
+                                        @Html.DisplayNameFor(model => model.BUD)
+                                    </th>
+                                    <th style="font-size: 1.25em" col width="auto">
+                                        @Html.DisplayNameFor(model => model.LOC)
+                                    </th>
+                                    <th style="font-size:1.25em" col width="auto">
+                                        @Html.DisplayNameFor(model => model.PURCH_YY)
+                                    </th>
+                                    <th style="font-size: 1.25em" col width="auto">
+                                        @Html.DisplayNameFor(model => model.COST)
+                                    </th>
+                                    <th style="font-size: 1.25em" col width="auto">
+                                        @Html.DisplayNameFor(model => model.DEPR)
+                                    </th>
+                                    <th style="font-size: 1.25em" col width="auto">
+                                        @Html.DisplayNameFor(model => model.SUB_TYPE)
+                                    </th>
+                                    <th style="font-size: 1.25em" col width="auto">
+                                        @Html.DisplayNameFor(model => model.REQ_NO)
+                                    </th>
+                                    <th style="font-size: 1.25em" col width="auto">
+                                        @Html.DisplayNameFor(model => model.VCHR_NO)
+                                    </th>
+                                    <th style="font-size: 1.25em" col width="80">
+
+                                        @Html.DisplayNameFor(model => model.DOC_DATE)
+                                    </th>
+                                    <th style="font-size: 1.25em" col width="auto">
+                                        @Html.DisplayNameFor(model => model.COMMENT)
+                                    </th>
+
+                                </tr>
+
+                                @foreach (MiscInventory.Models.T115_MISC_INVENTORY inventory in Model)
+                                {
+                                    <tr>
+                                        <td>
+                                            @Html.DisplayFor(modelItem => inventory.INV_TYPE)
+                                        </td>
+                                        <td>
+                                            @Html.DisplayFor(modelItem => inventory.ID_R)
+                                        </td>
+                                        <td>
+                                            @Html.DisplayFor(modelItem => inventory.INV_DESC)
+                                        </td>
+                                        <td>
+                                            @Html.DisplayFor(modelItem => inventory.BUD)
+                                        </td>
+                                        <td>
+                                            @Html.DisplayFor(modelItem => inventory.LOC)
+                                        </td>
+                                        <td>
+                                            @Html.DisplayFor(modelItem => inventory.PURCH_YY)
+                                        </td>
+                                        <td>
+                                            @Html.DisplayFor(modelItem => inventory.COST)
+                                        </td>
+                                        <td>
+                                            @Html.DisplayFor(modelItem => inventory.DEPR)
+                                        </td>
+                                        <td>
+                                            @Html.DisplayFor(modelItem => inventory.SUB_TYPE)
+                                        </td>
+                                        <td>
+                                            @Html.DisplayFor(modelItem => inventory.REQ_NO)
+                                        </td>
+                                        <td>
+                                            @Html.DisplayFor(modelItem => inventory.VCHR_NO)
+                                        </td>
+                                        <td>
+
+                                            @Html.DisplayFor(modelItem => inventory.DOC_DATE)
+                                        </td>
+                                        <td>
+                                            @Html.DisplayFor(modelItem => inventory.COMMENT)
+                                        </td>
+                                        <td>
+                                            <button id="@inventory.ID_R" onclick="inventoryClick(this.id)">Details</button>
+
+                                        </td>
+
+                                    </tr>
+                                }
+
+                            </table>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+
+    <div id="DivFooterRow" style="overflow: hidden">
+    </div>
+    <br />
+

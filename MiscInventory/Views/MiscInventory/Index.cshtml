@@ -1,0 +1,206 @@
+﻿
+@model MiscInventory.Models.InventorySearch
+
+<script src="~/Scripts/jquery-3.3.1.js"></script>
+<script src="~/Scripts/jquery-ui-1.12.1.js"></script>
+
+@{
+                /**/
+
+                ViewBag.Title = "Index";
+                Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+   
+        <div class="row">
+            <div class="col-12 text-center">
+                <div class="card contact shadow-sm mb-3 p-1 bg-white rounded">
+                    <div class="card-header card-title">
+                        <h3 class="title m-0">Miscellaneous Inventory Search</h3>
+                    </div>
+                </div>
+            </div>
+        </div>
+      
+  
+
+        @using (Html.BeginForm("Index", "MiscInventory", FormMethod.Post, new { data_ajax = "false" }))
+        {
+
+   
+        <div class="row">
+            <div class="col-12 text-center">
+                <div class="card contact shadow-sm mb-3 p-1 bg-white rounded">
+                    <div class="card-header card-title">
+                        <h5 class="title m-0">Search Criteria</h5>
+                    </div>
+                    <div class="card-body">
+                        <p>
+                            @Html.LabelFor(model => model.BUD)
+                            @Html.DropDownListFor(model => model.BUD, new SelectList(ViewBag.BUD, "Value", "Text", new { @class = "form-clear" })) *To search surplus equipment select 990
+                            @Html.ValidationMessageFor(model => model.BUD)<br />
+
+                            @Html.LabelFor(model => model.INV_TYPE)
+                            @Html.DropDownListFor(model => model.INV_TYPE, new SelectList(ViewBag.INV_TYPE, "Value", "Text", new { @class = "form-clear" })) Select Inventory Type<br />
+
+                            @Html.LabelFor(model => model.LOC)
+                            @Html.TextBoxFor(model => model.LOC, new { @class = "form-clear" })<br />
+
+                            @Html.LabelFor(model => model.INV_DESC)
+                            @Html.TextBoxFor(model => model.INV_DESC, new { @class = "form-clear" })<br />
+
+                            @Html.LabelFor(model => model.VCHR_NO)
+                            @Html.TextBoxFor(model => model.VCHR_NO, new { @class = "form-clear" })<br />
+
+                            @Html.LabelFor(model => model.ID_R)
+                            @Html.TextBoxFor(model => model.ID_R, new { @class = "form-clear" })<br />
+
+                        </p>
+
+                        <h5 class="title m-0">Search by Date:</h5>
+                        <p>
+                        <div class="search-input">
+                        
+                                @Html.LabelFor(model => model.FromSearchDate)
+                                @Html.TextBoxFor(model => model.FromSearchDate, new { @class = "datepicker" })
+                       
+            
+                            @Html.LabelFor(model => model.ToSearchDate)
+                            @Html.TextBoxFor(model => model.ToSearchDate, new { @class = "datepicker" })
+                        </div>
+                        </p>
+
+                    </div>
+                    <br />
+                    <div class="button">
+
+                        <input type="reset" value="Reset Form" />
+                        <input id="Search" type="submit" value="Search" name="Search" />
+
+                    </div>
+
+                </div>
+            </div>
+        </div>
+  
+
+
+
+        }
+
+        <br />
+
+        <div class="container">
+            <div class="row">
+                <div class="col-16 text-center">
+                    <div class="card contact shadow-sm mb-3 p-1 bg-white rounded">
+
+                        <div id="SearchResults">
+
+                            @if (Model.SearchResults == null)
+                            {
+
+                                <p>
+                                    <strong>Note:</strong>
+                                    Be specific in your search.
+                                    The system will only search for what you have entered in the fields.
+                                    Otherwise, it will pull all records from the database.
+                                </p>
+                            }
+                            else if (Model.SearchResults.Count > 0)
+                            {
+                                @Html.Partial("~/Views/Shared/_paging.cshtml", (string[][])ViewBag.PagingList)<br />
+                                @Html.Partial("~/Views/MiscInventory/IndexSearchResults.cshtml", Model.SearchResults)<br />
+                                @Html.Partial("~/Views/Shared/_paging.cshtml", (string[][])ViewBag.PagingList)<br />
+                            }
+                            else
+                            {
+                                <font size="12"><p align="center"><p>There are no inventory records that match your search.</p></font>
+                            }
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    
+
+
+
+    <div id="detailSearchResults">
+
+    </div>
+    <div id="detailArchSearchResults">
+
+    </div>
+
+    @section Scripts {
+
+
+        <script type="text/javascript">
+
+        function inventoryClick(id) {
+            $.ajaxSetup({ cache: false });
+            $("#detailSearchResults").empty();
+            $.ajax({
+                url: '@Url.Action("TransSearchResults")',
+                cache: false,
+                data: { id: id },
+                type: 'Get',
+                success: function (jsReturnArgs) {
+                    if (jsReturnArgs.Status === 300) {
+                        // showPopup("You do not have access to that");
+
+                    }
+                    else $('#detailSearchResults').html(jsReturnArgs.ViewString);
+                },
+                error: function (response) {
+                    alert("error : " + response("No Records Found"));
+                }
+            });
+        };
+
+           function transactionClick(id) {
+            $.ajaxSetup({ cache: false });
+            $("#detailArchSearchResults").empty();
+            $.ajax({
+                url: '@Url.Action("ArchSearchResults")',
+                cache: false,
+                data: { id: id },
+                type: 'Get',
+                success: function (jsReturnArgs) {
+                    if (jsReturnArgs.Status === 300) {
+                        // showPopup("You do not have access to that");
+
+                    }
+                    else $('#detailArchSearchResults').html(jsReturnArgs.ViewString);
+                },
+                error: function (response) {
+                    alert("error : " + response("No Records Found"));
+                }
+            });
+        };
+
+        $(document).ready(function () {
+            $("#tblSearch tr:nth-child(even)").addClass("even");
+            $("#tblSearch tr:nth-child(odd)").addClass("odd");
+        });
+
+            $(document).ready(function () {
+                var minValDate = new Date();
+                $('.datepicker').datepicker({
+                    format: 'mm-dd-yyyy',
+                    changeMonth: true,
+                    changeYear: true,
+                    maxDate: "+1m", 
+                    minDate: "-20y"
+                });
+                if ($('.datepicker').val() == minValDate) {
+                    var fromDate = new Date();
+                    var toDate = new Date();
+                    fromDate.setDate(fromDate.getDate() - 1);
+                    toDate.setDate(toDate.getDate() + 1);
+                }
+        });
+        </script>
+    }

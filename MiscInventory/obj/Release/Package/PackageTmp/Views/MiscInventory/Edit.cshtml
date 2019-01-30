@@ -1,0 +1,220 @@
+﻿@model MiscInventory.Models.T115_MISC_INVENTORY
+
+@{
+    ViewBag.Title = "Edit";
+}
+
+<h2>Edit</h2>
+
+@using (Html.BeginForm()) {
+    @Html.AntiForgeryToken()
+    @Html.ValidationSummary(true)
+
+    <fieldset>
+        <legend>T115_MISC_INVENTORY</legend>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.INV_TYPE)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.INV_TYPE)
+            @Html.ValidationMessageFor(model => model.INV_TYPE)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.DELETE_FLAG)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.DELETE_FLAG)
+            @Html.ValidationMessageFor(model => model.DELETE_FLAG)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.ID_R)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.ID_R)
+            @Html.ValidationMessageFor(model => model.ID_R)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.INV_DESC)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.INV_DESC)
+            @Html.ValidationMessageFor(model => model.INV_DESC)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.BUD)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.BUD)
+            @Html.ValidationMessageFor(model => model.BUD)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.SERIAL_NO)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.SERIAL_NO)
+            @Html.ValidationMessageFor(model => model.SERIAL_NO)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.REPLC_SERIAL_NO)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.REPLC_SERIAL_NO)
+            @Html.ValidationMessageFor(model => model.REPLC_SERIAL_NO)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.LOC)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.LOC)
+            @Html.ValidationMessageFor(model => model.LOC)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.SUB_LOC)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.SUB_LOC)
+            @Html.ValidationMessageFor(model => model.SUB_LOC)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.PURCH_YY)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.PURCH_YY)
+            @Html.ValidationMessageFor(model => model.PURCH_YY)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.PURCH_MM)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.PURCH_MM)
+            @Html.ValidationMessageFor(model => model.PURCH_MM)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.DOC_DATE)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.DOC_DATE)
+            @Html.ValidationMessageFor(model => model.DOC_DATE)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.COST)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.COST)
+            @Html.ValidationMessageFor(model => model.COST)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.DEPR)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.DEPR)
+            @Html.ValidationMessageFor(model => model.DEPR)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.FEDID)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.FEDID)
+            @Html.ValidationMessageFor(model => model.FEDID)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.SUB_TYPE)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.SUB_TYPE)
+            @Html.ValidationMessageFor(model => model.SUB_TYPE)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.REQ_NO)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.REQ_NO)
+            @Html.ValidationMessageFor(model => model.REQ_NO)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.VCHR_NO)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.VCHR_NO)
+            @Html.ValidationMessageFor(model => model.VCHR_NO)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.MANUFAC_MODL_NO)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.MANUFAC_MODL_NO)
+            @Html.ValidationMessageFor(model => model.MANUFAC_MODL_NO)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.MANUFAC_NAME)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.MANUFAC_NAME)
+            @Html.ValidationMessageFor(model => model.MANUFAC_NAME)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.COMMENT)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.COMMENT)
+            @Html.ValidationMessageFor(model => model.COMMENT)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.UT_VCHR_NO)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.UT_VCHR_NO)
+            @Html.ValidationMessageFor(model => model.UT_VCHR_NO)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.T115_MISC_INVENTORY_PRIMARY_KEY)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.T115_MISC_INVENTORY_PRIMARY_KEY)
+            @Html.ValidationMessageFor(model => model.T115_MISC_INVENTORY_PRIMARY_KEY)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.VALUE_STATUS)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.VALUE_STATUS)
+            @Html.ValidationMessageFor(model => model.VALUE_STATUS)
+        </div>
+
+        <p>
+            <input type="submit" value="Save" />
+        </p>
+    </fieldset>
+}
+
+<div>
+    @Html.ActionLink("Back to List", "Index")
+</div>
+
+@section Scripts {
+    @Scripts.Render("~/bundles/jqueryval")
+}

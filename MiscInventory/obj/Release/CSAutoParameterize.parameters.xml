@@ -1,0 +1,12 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<parameters>
+  <parameter name="MISC_INVENTORYEntities-Web.config Connection String" description="MISC_INVENTORYEntities Connection String used in web.config by the application to access the database." defaultValue="metadata=res://*/Models.MiscInventory.csdl|res://*/Models.MiscInventory.ssdl|res://*/Models.MiscInventory.msl;provider=System.Data.SqlClient;provider connection string=&quot;data source=testmfdb;initial catalog=MISC_INVENTORY;integrated security=True;MultipleActiveResultSets=True;App=EntityFramework&quot;" tags="SqlConnectionString">
+    <parameterEntry kind="XmlFile" scope="D:\\tfs_applications\\MiscInventory\\MiscInventory\\obj\\Release\\Package\\PackageTmp\\Web\.config$" match="/configuration/connectionStrings/add[@name='MISC_INVENTORYEntities']/@connectionString" />
+  </parameter>
+  <parameter name="MISC_INVENTORYEntities1-Web.config Connection String" description="MISC_INVENTORYEntities1 Connection String used in web.config by the application to access the database." defaultValue="metadata=res://*/Models.MiscInventoryEntityModel.csdl|res://*/Models.MiscInventoryEntityModel.ssdl|res://*/Models.MiscInventoryEntityModel.msl;provider=System.Data.SqlClient;provider connection string=&quot;data source=YORKIE\MFTESTSQL;initial catalog=MISC_INVENTORY;integrated security=True;MultipleActiveResultSets=True;App=EntityFramework&quot;" tags="SqlConnectionString">
+    <parameterEntry kind="XmlFile" scope="D:\\tfs_applications\\MiscInventory\\MiscInventory\\obj\\Release\\Package\\PackageTmp\\Web\.config$" match="/configuration/connectionStrings/add[@name='MISC_INVENTORYEntities1']/@connectionString" />
+  </parameter>
+  <parameter name="SYSTEM_SECURITYEntities-Web.config Connection String" description="SYSTEM_SECURITYEntities Connection String used in web.config by the application to access the database." defaultValue="metadata=res://*/Models.SystemSecurity.csdl|res://*/Models.SystemSecurity.ssdl|res://*/Models.SystemSecurity.msl;provider=System.Data.SqlClient;provider connection string=&quot;data source=YORKIE\MFTESTSQL;initial catalog=SYSTEM_SECURITY;integrated security=True;MultipleActiveResultSets=True;App=EntityFramework&quot;" tags="SqlConnectionString">
+    <parameterEntry kind="XmlFile" scope="D:\\tfs_applications\\MiscInventory\\MiscInventory\\obj\\Release\\Package\\PackageTmp\\Web\.config$" match="/configuration/connectionStrings/add[@name='SYSTEM_SECURITYEntities']/@connectionString" />
+  </parameter>
+</parameters>

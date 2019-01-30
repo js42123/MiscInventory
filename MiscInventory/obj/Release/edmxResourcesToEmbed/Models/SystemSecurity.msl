@@ -1,0 +1,20 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="SystemSecurityModelStoreContainer" CdmEntityContainer="SYSTEM_SECURITYEntities">
+    <EntitySetMapping Name="T000_SYSTEM_SEC">
+      <EntityTypeMapping TypeName="SystemSecurityModel.T000_SYSTEM_SEC">
+        <MappingFragment StoreEntitySet="T000_SYSTEM_SEC">
+          <ScalarProperty Name="SYSTEM_ID" ColumnName="SYSTEM_ID" />
+          <ScalarProperty Name="USERID_R" ColumnName="USERID_R" />
+          <ScalarProperty Name="BUDGET" ColumnName="BUDGET" />
+          <ScalarProperty Name="FUNCTIONAL_AREA" ColumnName="FUNCTIONAL_AREA" />
+          <ScalarProperty Name="PRIORITY" ColumnName="PRIORITY" />
+          <ScalarProperty Name="DEFAULT_PANEL" ColumnName="DEFAULT_PANEL" />
+          <ScalarProperty Name="UPD_DATE" ColumnName="UPD_DATE" />
+          <ScalarProperty Name="UPDATED_BY" ColumnName="UPDATED_BY" />
+          <ScalarProperty Name="T000_SYSTEM_SEC_PRIMARY_KEY" ColumnName="T000_SYSTEM_SEC_PRIMARY_KEY" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping>

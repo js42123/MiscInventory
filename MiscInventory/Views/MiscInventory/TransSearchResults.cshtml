@@ -1,0 +1,157 @@
+﻿@model IEnumerable<MiscInventory.Models.T115_MISC_TRANS>
+
+@(
+    Layout=""   
+)
+
+
+    <div class="container">
+        <div class="row">
+            <div class="col-12 text-center">
+                <div class="card contact shadow-sm mb-3 p-1 bg-white rounded">
+                    <div class="card-header card-title">
+                        <h4 class="title m-0">Current Transaction Results</h4>
+                    </div>
+
+                    <div class="card-body" style="color: black">
+                        <div style="overflow: scroll;" id="DivMainContent">
+                            <table id="tblSearch" style="font-size: 0.9em;" border="1">
+                                <tr class="header">
+
+                                    <th style="font-size: 0.8em">
+                                        @Html.DisplayNameFor(model => model.ID_R)
+                                    </th>
+                                    <th style="font-size: 0.8em">
+                                        @Html.DisplayNameFor(model => model.TRANS)
+                                    </th>
+                                    <th style="font-size: 0.8em">
+                                        @Html.DisplayNameFor(model => model.INV_TYPE)
+                                    </th>
+                                    <th style="font-size: 0.8em">
+                                        @Html.DisplayNameFor(model => model.INV_DESC)
+                                    </th>
+                                    <th style="font-size: 0.8em">
+                                        @Html.DisplayNameFor(model => model.BUD)
+                                    </th>
+                                    <th style="font-size: 0.8em">
+                                        @Html.DisplayNameFor(model => model.LOC)
+                                    </th>
+
+                                    <th style="font-size: 0.8em">
+                                        @Html.DisplayNameFor(model => model.COST)
+                                    </th>
+                                    <th style="font-size: 0.8em">
+                                        @Html.DisplayNameFor(model => model.DEPR)
+                                    </th>
+                                    <th style="font-size: 0.8em">
+                                        @Html.DisplayNameFor(model => model.SUB_TYPE)
+                                    </th>
+                                    <th style="font-size: 0.8em">
+                                        @Html.DisplayNameFor(model => model.REQ_NO)
+                                    </th>
+                                    <th style="font-size: 0.8em">
+                                        @Html.DisplayNameFor(model => model.VCHR_NO)
+                                    </th>
+                                    <th style="font-size: 0.8em">
+                                        @Html.DisplayNameFor(model => model.DOC_DATE)
+                                    </th>
+                                    <th style="font-size: 0.8em">
+                                        @Html.DisplayNameFor(model => model.INV_DATE)
+                                    </th>
+                                    <th style="font-size: 0.8em">
+                                        @Html.DisplayNameFor(model => model.INV_TIME)
+                                    </th>
+                                    <th style="font-size: 0.8em">
+                                        @Html.DisplayNameFor(model => model.FEDID)
+                                    </th>
+                                    <th style="font-size: 0.8em">
+                                        @Html.DisplayNameFor(model => model.TRANS_USERID)
+                                    </th>
+
+                                </tr>
+
+                                @foreach (var transaction in Model)
+                                {
+                                    <tr>
+                                        <td>
+                                            @Html.DisplayFor(modelItem => transaction.ID_R)
+                                        </td>
+                                        <td>
+                                            @Html.DisplayFor(modelItem => transaction.TRANS)
+                                        </td>
+                                        <td>
+                                            @Html.DisplayFor(modelItem => transaction.INV_TYPE)
+                                        </td>
+                                        <td>
+                                            @Html.DisplayFor(modelItem => transaction.INV_DESC)
+                                        </td>
+                                        <td>
+                                            @Html.DisplayFor(modelItem => transaction.BUD)
+                                        </td>
+                                        <td>
+                                            @Html.DisplayFor(modelItem => transaction.LOC)
+                                        </td>
+                                        <td>
+                                            @Html.DisplayFor(modelItem => transaction.COST)
+                                        </td>
+                                        <td>
+                                            @Html.DisplayFor(modelItem => transaction.DEPR)
+                                        </td>
+                                        <td>
+                                            @Html.DisplayFor(modelItem => transaction.SUB_TYPE)
+                                        </td>
+                                        <td>
+                                            @Html.DisplayFor(modelItem => transaction.REQ_NO)
+                                        </td>
+                                        <td>
+                                            @Html.DisplayFor(modelItem => transaction.VCHR_NO)
+                                        </td>
+                                        <td>
+                                            @Html.DisplayFor(modelItem => transaction.DOC_DATE)
+                                        </td>
+                                        <td>
+                                            @Html.DisplayFor(modelItem => transaction.INV_DATE)
+                                        </td>
+                                        <td>
+                                            @Html.DisplayFor(modelItem => transaction.INV_TIME)
+                                        </td>
+                                        <td>
+                                            @Html.DisplayFor(modelItem => transaction.FEDID)
+                                        </td>
+                                        <td>
+                                            @Html.DisplayFor(modelItem => transaction.TRANS_USERID)
+                                        </td>
+                                        <td>
+                                            <button id="@transaction.ID_R" onclick="transactionClick(this.id)">Archives</button>
+                                        </td>
+                                    </tr>
+
+                                }
+
+
+                            </table>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+
+
+        <script type="text/javascript">
+
+            $(document).ready(function () {
+                $("#tblSearch tr:nth-child(even)").addClass("even");
+                $("#tblSearch tr:nth-child(odd)").addClass("odd");
+            });
+
+
+
+        </script>
+
+
+
+
