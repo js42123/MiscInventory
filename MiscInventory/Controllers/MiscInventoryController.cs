@@ -68,7 +68,6 @@ namespace MiscInventory.Controllers
                         .ToList<Models.T115_MISC_INVENTORY>();
                     model.SearchResults = pagingList;
                 }
-
                 using (var db = new Models.MISC_INVENTORYEntities1())
                 {
 
